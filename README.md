@@ -1,7 +1,7 @@
 # Hunspell german dictionary with support of compound words
 
-This is Postgresql extension that installs Hunspall dictionaries with support of spliting of compound words.
-The disctionaries were copied from here: http://www.sai.msu.su/~megera/postgres/gist/tsearch/V2/
+This is Postgresql extension that installs Hunspell dictionaries with recognizing of the words that can be compounds of other words.
+The dictionaries were copied from here: http://www.sai.msu.su/~megera/postgres/gist/tsearch/V2/
 
 ## Install
 
