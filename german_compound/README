@@ -1,0 +1,21 @@
+The german dictionaries from OpenOffice.org are missing the compound flags necessary for recognising words that can be compounds of other words.
+German language depends heavily on compound words such as "Haustür", which need to be lexized
+as "'tür':1 'haus':1 'haustür':1" by tsearch in order to yield 'haustür' when searching for 'tür'.
+
+Aditionally the german language has another quirk: The "Fugen-S", an s that gets inserted between compound words such as in "Vertragsstrafe".
+Other such insertions are "n" ("Küchenmesser"), "es" ("Haaresbreite"), and "en" ("Bärendienst")
+
+compound.pl adds the /_ Flag to all words that are parts of compound words.
+It additionally adds one of the flags x,y,z for the insertions descibed above, see the code for more info.
+It searches the input dictionary word by word and checks if the given entry is part of another word 
+e.g. 'tür' will be found in 'haustür', thus creating the entry tür/_ or vertrag/_x in the dictionary.
+
+Usage:
+compound.pl -i german.dic -o german.dict
+
+where german.dic is the dictionary file from OpenOffice.org processed by my2ispell and german.dict is the compound-extended version.
+
+The additional files are:
+german.stop - Stopwordfile we use
+german.aff  - Affix file with the correct compound marker and suffix flags for compound insertions
+german dict - ouput of compound.pl

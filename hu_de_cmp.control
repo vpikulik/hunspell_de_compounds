@@ -1,0 +1,5 @@
+
+comment = 'Hunspell german dicitionary, that can split compount words'
+default_version = '0.1'
+module_pathname = '$libdir/hu_de_cmp'
+relocatable = true
